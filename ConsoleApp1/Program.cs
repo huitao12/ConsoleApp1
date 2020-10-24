@@ -8,7 +8,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello World!");
             int i = 2;
-            Console.WriteLine(i);hmp
+            Console.WriteLine(i);liuxiao 
         }
     }
 }
