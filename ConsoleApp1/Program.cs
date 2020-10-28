@@ -8,12 +8,12 @@ namespace ConsoleApp1
         {
             string HeadPortrait = "";
             //因为string装的多
-            bool gender = true;
-            gender = false;
+            bool gender = false;
+            gender = true;
             Console.WriteLine(gender);
 
             string birthday = "2000年";
-            birthday = "2020年";
+            birthday = "2000年";
 
             string month = "10月";
             string day = "10日";
