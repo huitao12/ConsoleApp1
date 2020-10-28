@@ -6,10 +6,24 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            int i = 2;nihao
+            string HeadPortrait = "";
+            //因为string装的多
+            bool gender = true;
+            gender = false;
+            Console.WriteLine(gender);
 
-            Console.WriteLine(i); 
+            string birthday = "2000年";
+            birthday = "2020年";
+
+            string month = "10月";
+            string day = "10日";
+            Console.WriteLine(birthday + month + day);
+
+            string keyword = "";
+            string SelfIntroduction = "我叫胡涛";
+            SelfIntroduction = "我叫胡涛";
+            Console.WriteLine(SelfIntroduction);
+
         }
     }
 }
