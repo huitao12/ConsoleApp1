@@ -19,6 +19,7 @@ namespace ConsoleApp1
             //PS：验证码 / 用户名 / 密码直接预设在源代码中，输入由Console.ReadLine()完成。
 
 
+
             string readLine = Console.ReadLine();
             string verification = "ut91";
             string username = "yezi";
@@ -31,39 +32,48 @@ namespace ConsoleApp1
             else
             {
                 Console.WriteLine("验证码正确");
-                string WriteLine=Console.ReadLine();
+                string WriteLine = Console.ReadLine();
                 if (username != WriteLine)
                 {
                     Console.WriteLine("用户名不存在");
                 }
                 else
                 {
-                    Console.WriteLine("用户名存在");
+
+                    if (username != "yezi")
+                    {
+                        Console.WriteLine("用户名错误");
+                    }
+                    else
+                    {
+                        Console.WriteLine("用户名正确");
+                        string ReadLine = Console.ReadLine();
+                        if (password != ReadLine)
+                        {
+                            Console.WriteLine("密码错误");
+                        }
+                        else
+                        {
+                            if (password != "1212")
+                            {
+                                Console.WriteLine("密码错误");
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("密码正确");
+                                Console.WriteLine("恭喜！登陆成功！");
+                            }
+
+                        }
+
+
+
+
+                    }
+
                 }
             }
-
-
-            if (username != "yezi")
-            {
-                Console.WriteLine("用户名错误");
-            }
-            else
-            {
-                Console.WriteLine("用户名正确");
-                string WriteLine = Console.ReadLine();
-                if (password != "1212")
-                {
-                    Console.WriteLine("密码错误");
-                }
-                else
-                {
-                    Console.WriteLine("密码正确");
-                }
-                    Console.WriteLine("恭喜！登陆成功！");
-
-
-            }
-
 
 
 
