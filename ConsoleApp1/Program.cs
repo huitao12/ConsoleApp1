@@ -15,7 +15,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
             #region 循环
+            //int target = 13;
+            //int[] age = { 2, 6, 13, 25, 47, 56, 83 };
+
+            //for (int i = 0; i < age.Length; i++)
+            //{
+            //    if (age[i] == 13)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
+
+            //}
+
+
+
+
 
 
             // 分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9
@@ -34,6 +50,12 @@ namespace ConsoleApp1
             //    Console.WriteLine(i);
             //}
 
+            //int i = 1;
+            //while (i <= 5)
+            //{
+            //    Console.WriteLine(i);
+            //    i+=1;
+            //}
 
             //用数组输出
             //int[] age = { 1, 3, 5, 7, 9 };
@@ -53,6 +75,11 @@ namespace ConsoleApp1
             //    i += 2;
             //}
 
+            //for (int i = 1; i <= 9; i++)
+            //{
+            //    Console.WriteLine(i);
+            //    i+=1;
+            //}
 
             //用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
 
@@ -89,72 +116,123 @@ namespace ConsoleApp1
             //让电脑计算并输出：99 + 97 + 95 + 93 + ...+1的值
 
             //int sum = 0;
-            //for (int i = 1; i < 100; i++)
+            //for (int i = 1; i < 100; i+=2)//i++
             //{
-            //    sum += i++;
+            //    sum += i;//sum+=i++;
             //}
             //Console.WriteLine(sum);
 
             //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
-            //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1 };
+            //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152};
             //double max = grade[0], min = grade[0];
             //for (int i = 0; i < grade.Length; i++)
             //{
             //    if (grade[i] > max)
             //    {
             //        max = grade[i];
-            //        break;
             //    }//else do nothing
-            //    for (int j = 0; j < grade.Length; j++)
+            //    if (grade[i] < min)
             //    {
-            //        if (grade[j] < min)
-            //        {
-            //            min = grade[j];
-            //        }//else do nothing
-            //    }
+            //        min = grade[i];
+            //    }//else do nothing
             //}
             //Console.WriteLine(max);
             //Console.WriteLine(min);
 
 
-            //找到100以内的所有质数（只能被1和它自己整除的数）
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    for (int j = 0; j < i-1; j++)
-            //    {
-            //        if (j  >j+1)
-            //        {
+            ////找到100以内的所有质数（只能被1和它自己整除的数）
 
+            //for (int i = 2; i < 100; i++)
+            //{
+            //    bool a = true;
+            //    for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
+            //    {
+            //        if (i % j == 0) //说明不是质数
+            //        {
+            //            a = false;
             //        }
             //    }
-
+            //    if (a)
+            //    {
+            //        Console.WriteLine(i);
+            //    }
             //}
+
 
             //生成一个元素（值随机）从小到大排列的数组
 
-            int[] grade = { 52, 65, 2, 8, 45, 86,  98, 24, 32, 15, 71, 82, 91 ,-1};
-            for (int i = 1; i < grade.Length; i++)
+
+            //int age = new Random(10).Next(10,40);
+            int[] age = new int[10];
+            for (int i = 0; i < age.Length; i++)
             {
-                for (int j = 0; j < grade.Length - 1; j++)
-                {
-                    if (grade[j] > grade[j + 1])
-                    {
-                        int temp = grade[j];
-                        grade[j] = grade[j + 1];
-                        grade[j + 1] = temp;
-                    }
-                }
+                Random r = new Random();
+                int temp = r.Next(10, 80);
+                age[i] = temp;
             }
-            for (int i = 0; i < grade .Length; i++)
+            for (int i = 0; i < age.Length; i++)
             {
-                Console.WriteLine(grade [i]);
+                Console.WriteLine(age[i]);
             }
+
+
+            //int[] grade = { 52, 65, 2, 8, 45, 86, 98, 24, 32, 15, 71, 82, 91, -1 };
+            //for (int i = 1; i < grade.Length; i++)
+            //{
+            //    for (int j = 0; j < grade.Length - 1; j++)
+            //    {
+            //        if (grade[j] > grade[j + 1])
+            //        {
+            //            int temp = grade[j];
+            //            grade[j] = grade[j + 1];
+            //            grade[j + 1] = temp;
+            //        }   
+            //    }
+            //}
+            //for (int i = 0; i < grade.Length; i++)
+            //{
+            //    Console.WriteLine(grade[i]);
+            //}
             //设立并显示一个多维数组的值，元素值等于下标之和。Console.Write()
 
 
 
 
-          
+
+
+
+
+
+
+
+            //int[] age = { 4, 11, 25, 29, 33, 37, 46, 57, 60, 71, 86, 92 };
+            //int[,] seat = new int[3, 4];
+            //int sum = 0, array = 0;
+
+            ////seat[0, 0] = 4;
+            ////seat[0, 1] = 11;
+            ////seat[0, 2] = 25;
+            ////seat[0, 3] = 29;
+            ////seat[1, 0] = 33;
+            ////seat[1, 1] = 37;
+            ////seat[1, 2] = 46;
+            ////seat[1, 3] = 57;
+            ////seat[2, 0] = 60;
+            ////seat[2, 1] = 71;
+            ////seat[2, 2] = 86;
+            ////seat[2, 3] = 92;
+
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 4; j++)
+            //    {
+            //        Console.Write(i);
+            //        Console.WriteLine(j);
+            //        sum = i + j;
+            //    }
+            //}
+            //Console.WriteLine(sum);
+
             #endregion
             #region 数组
             //        将源栈同学姓名 / 昵称分别：
@@ -199,61 +277,46 @@ namespace ConsoleApp1
 
 
 
-            //string readline = console.readline();
-            //string verification = "ut91";
-            //string username = "yezi";
-            //string password = "1212";
 
-            //if (verification != readline)
+            //if ("ut91" != Console.ReadLine())
             //{
-            //    console.writeline("验证码错误");
+            //    Console.WriteLine("验证码错误");
             //}
             //else
             //{
-            //    console.writeline("验证码正确");
-            //    string writeline = console.readline();
-            //    if (username != writeline)
+            //    Console.WriteLine("验证码正确");
+            //    if ("yezi" != Console.ReadLine())
             //    {
-            //        console.writeline("用户名不存在");
+            //        Console.WriteLine("用户名不存在");
             //    }
             //    else
             //    {
+            //        Console.WriteLine("用户名存在");
 
-            //        if (username != "yezi")
-            //        {
-            //            console.writeline("用户名错误");
-            //        }
-            //        else
-            //        {
-            //            console.writeline("用户名正确");
-            //            string readline = console.readline();
-            //            if (password != readline)
+            //            if ("1212" != Console.ReadLine())
             //            {
-            //                console.writeline("密码错误");
+            //                Console.WriteLine("用户名或密码错误");
             //            }
-            //            else
-            //            {
-            //                if (password != "1212")
-            //                {
-            //                    console.writeline("密码错误");
-
-            //                }
             //                else
             //                {
-            //                    console.writeline("密码正确");
-            //                    console.writeline("恭喜！登陆成功！");
+            //                    Console.WriteLine("密码正确"); 
+            //                    Console.WriteLine("恭喜！登陆成功！"); 
             //                }
-
-            //            }
-
-
-
-
-            //        }
-
             //    }
             //}
             #endregion
+        }
+        static int find(int[] array, int target)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == 13)
+                {
+                    return i;
+                    //Console.WriteLine(i);
+                }
+            }
+            return -1;
         }
     }
 }
