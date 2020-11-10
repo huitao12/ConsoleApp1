@@ -162,19 +162,21 @@ namespace ConsoleApp1
             //生成一个元素（值随机）从小到大排列的数组
 
 
-            //int age = new Random(10).Next(10,40);
             int[] age = new int[10];
             for (int i = 0; i < age.Length; i++)
             {
                 Random r = new Random();
                 int temp = r.Next(10, 80);
-                age[i] = temp;
+                age[i] = temp;//生产随机10数组
             }
             for (int i = 0; i < age.Length; i++)
             {
                 Console.WriteLine(age[i]);
+
             }
 
+
+            //生成一个数组从小到大排序
 
             //int[] grade = { 52, 65, 2, 8, 45, 86, 98, 24, 32, 15, 71, 82, 91, -1 };
             //for (int i = 1; i < grade.Length; i++)
@@ -186,13 +188,14 @@ namespace ConsoleApp1
             //            int temp = grade[j];
             //            grade[j] = grade[j + 1];
             //            grade[j + 1] = temp;
-            //        }   
+            //        }
             //    }
             //}
             //for (int i = 0; i < grade.Length; i++)
             //{
             //    Console.WriteLine(grade[i]);
             //}
+
             //设立并显示一个多维数组的值，元素值等于下标之和。Console.Write()
 
 
