@@ -161,19 +161,61 @@ namespace ConsoleApp1
 
             //生成一个元素（值随机）从小到大排列的数组
 
+            //int[] receive = new int[10];
+
+            //for (int i = 0; i < receive.Length; i++)
+            //{
+            //    receive[i] = new Random().Next(10, 50);
+            //}
+            ////这是只是为了输出
+            ////for (int i = 0; i < receive.Length; i++)
+            ////{
+            ////    Console.Write(receive[i] + ",");
+            ////}
+            //for (int i = 0; i < receive.Length - 1; i++)
+            //{
+            //    for (int j = 0; j < receive.Length - 1 - i; j++)
+            //    {
+            //        if (receive[j] > receive[j + 1])
+            //        {
+            //            int temp = receive[j];
+            //            receive[j] = receive[j + 1];
+            //            receive[j + 1] = temp;
+            //        }
+            //    }
+            //}
+            //for (int i = 0; i < receive.Length; i++)
+            //{//只是为了输出数字
+            //    Console.Write(receive[i] + ",");
+            //}
+
+
 
             int[] age = new int[10];
             for (int i = 0; i < age.Length; i++)
             {
                 Random r = new Random();
-                int temp = r.Next(10, 80);
+                int temp = r.Next(10, 50);
                 age[i] = temp;//生产随机10数组
+            }
+            //冒泡排序
+            for (int i = 0; i < age.Length; i++)
+            {
+                for (int j = 0; j < age.Length - 1; j++)
+                {
+                    if (age[j] > age[j + 1])
+                    {
+                        int temp = age[j];
+                        age[j] = age[j + 1];
+                        age[j + 1] = temp;
+                    }
+                }
             }
             for (int i = 0; i < age.Length; i++)
             {
-                Console.WriteLine(age[i]);
-
+                Console.Write(age[i] + ",");
             }
+
 
 
             //生成一个数组从小到大排序
@@ -199,42 +241,17 @@ namespace ConsoleApp1
             //设立并显示一个多维数组的值，元素值等于下标之和。Console.Write()
 
 
-
-
-
-
-
-
-
-
-
-            //int[] age = { 4, 11, 25, 29, 33, 37, 46, 57, 60, 71, 86, 92 };
             //int[,] seat = new int[3, 4];
-            //int sum = 0, array = 0;
 
-            ////seat[0, 0] = 4;
-            ////seat[0, 1] = 11;
-            ////seat[0, 2] = 25;
-            ////seat[0, 3] = 29;
-            ////seat[1, 0] = 33;
-            ////seat[1, 1] = 37;
-            ////seat[1, 2] = 46;
-            ////seat[1, 3] = 57;
-            ////seat[2, 0] = 60;
-            ////seat[2, 1] = 71;
-            ////seat[2, 2] = 86;
-            ////seat[2, 3] = 92;
-
-            //for (int i = 0; i < 3; i++)
+            //for (int i = 0; i < seat.GetLength(0); i++)
             //{
-            //    for (int j = 0; j < 4; j++)
+            //    for (int j = 0; j < seat.GetLength(1); j++)
             //    {
-            //        Console.Write(i);
-            //        Console.WriteLine(j);
-            //        sum = i + j;
+            //        seat[i, j]=i+j;
+            //        Console.Write(seat[i, j]+" ");
             //    }
+            //    Console.WriteLine();
             //}
-            //Console.WriteLine(sum);
 
             #endregion
             #region 数组
