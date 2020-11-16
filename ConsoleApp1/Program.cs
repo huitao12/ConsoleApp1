@@ -15,23 +15,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
             #region 循环
-            //int target = 13;
-            //int[] age = { 2, 6, 13, 25, 47, 56, 83 };
-
-            //for (int i = 0; i < age.Length; i++)
-            //{
-            //    if (age[i] == 13)
-            //    {
-            //        Console.WriteLine(i);
-            //    }
-
-            //}
-
-
-
-
 
 
             // 分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9
@@ -54,7 +38,7 @@ namespace ConsoleApp1
             //while (i <= 5)
             //{
             //    Console.WriteLine(i);
-            //    i+=1;
+            //    i+=1; 
             //}
 
             //用数组输出
@@ -75,10 +59,10 @@ namespace ConsoleApp1
             //    i += 2;
             //}
 
-            //for (int i = 1; i <= 9; i++)
+            //for (int i = 1; i <= 9; i += 2)//i++
             //{
             //    Console.WriteLine(i);
-            //    i+=1;
+            //    //i += 1;
             //}
 
             //用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
@@ -144,15 +128,16 @@ namespace ConsoleApp1
 
             //for (int i = 2; i < 100; i++)
             //{
-            //    bool a = true;
+            //    bool isprime = true;//isprime是质数还是不是质数
             //    for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
             //    {
             //        if (i % j == 0) //说明不是质数
             //        {
-            //            a = false;
+            //            isprime = false;//不是质数
+            //            break;
             //        }
             //    }
-            //    if (a)
+            //    if (isprime)//是质数
             //    {
             //        Console.WriteLine(i);
             //    }
@@ -161,60 +146,31 @@ namespace ConsoleApp1
 
             //生成一个元素（值随机）从小到大排列的数组
 
-            //int[] receive = new int[10];
 
-            //for (int i = 0; i < receive.Length; i++)
+            //int[] age = new int[10];
+            //Random r = new Random();
+            //for (int i = 0; i < age.Length; i++)
             //{
-            //    receive[i] = new Random().Next(10, 50);
+            //    int temp = r.Next(10, 50);
+            //    age[i] = temp;//生产随机10数组
             //}
-            ////这是只是为了输出
-            ////for (int i = 0; i < receive.Length; i++)
-            ////{
-            ////    Console.Write(receive[i] + ",");
-            ////}
-            //for (int i = 0; i < receive.Length - 1; i++)
+            ////冒泡排序
+            //for (int i = 0; i < age.Length; i++)
             //{
-            //    for (int j = 0; j < receive.Length - 1 - i; j++)
+            //    for (int j = 0; j < age.Length - 1; j++)
             //    {
-            //        if (receive[j] > receive[j + 1])
+            //        if (age[j] > age[j + 1])
             //        {
-            //            int temp = receive[j];
-            //            receive[j] = receive[j + 1];
-            //            receive[j + 1] = temp;
+            //            int temp = age[j];
+            //            age[j] = age[j + 1];
+            //            age[j + 1] = temp;
             //        }
             //    }
             //}
-            //for (int i = 0; i < receive.Length; i++)
-            //{//只是为了输出数字
-            //    Console.Write(receive[i] + ",");
+            //for (int i = 0; i < age.Length; i++)
+            //{
+            //    Console.Write(age[i] + ",");
             //}
-
-
-
-            int[] age = new int[10];
-            for (int i = 0; i < age.Length; i++)
-            {
-                Random r = new Random();
-                int temp = r.Next(10, 50);
-                age[i] = temp;//生产随机10数组
-            }
-            //冒泡排序
-            for (int i = 0; i < age.Length; i++)
-            {
-                for (int j = 0; j < age.Length - 1; j++)
-                {
-                    if (age[j] > age[j + 1])
-                    {
-                        int temp = age[j];
-                        age[j] = age[j + 1];
-                        age[j + 1] = temp;
-                    }
-                }
-            }
-            for (int i = 0; i < age.Length; i++)
-            {
-                Console.Write(age[i] + ",");
-            }
 
 
 
@@ -247,8 +203,8 @@ namespace ConsoleApp1
             //{
             //    for (int j = 0; j < seat.GetLength(1); j++)
             //    {
-            //        seat[i, j]=i+j;
-            //        Console.Write(seat[i, j]+" ");
+            //        seat[i, j] = i + j;
+            //        Console.Write(seat[i, j] + " ");
             //    }
             //    Console.WriteLine();
             //}
@@ -325,18 +281,6 @@ namespace ConsoleApp1
             //    }
             //}
             #endregion
-        }
-        static int find(int[] array, int target)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == 13)
-                {
-                    return i;
-                    //Console.WriteLine(i);
-                }
-            }
-            return -1;
         }
     }
 }
