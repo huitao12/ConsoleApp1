@@ -24,7 +24,7 @@ namespace ConsoleApp1
             //int[] age = { 1, 2, 3, 4, 5 };
             //for (int i = 0; i < age.Length; i++)
             //{
-            //    Console.WriteLine(age[i]);
+            //Console.WriteLine(age[i]);
             //}
 
 
@@ -242,45 +242,60 @@ namespace ConsoleApp1
             //}
             //Console.WriteLine(a);
             #endregion
-            #region 分支
+
+            Judge ( "ut91", "yezi", "1212");
+
+        }
+       
+       
+        /// <summary>
+        /// 登录界面
+        /// </summary>
+        /// <param name="code">验证码</param>
+        /// <param name="name">用户名</param>
+        /// <param name="password">密码</param>
+         static void Judge(string code, string  name,string password )
+        {
+            //将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
             //用户依次由控制台输入：验证码、用户名和密码：
             //    如果验证码输入错误，直接输出：“*验证码错误”；
             //    如果用户名不存在，直接输出：“*用户名不存在”；
             //    如果用户名或密码错误，输出：“*用户名或密码错误”
             //    以上全部正确无误，输出：“恭喜！登录成功！”
-
             //ps：验证码 / 用户名 / 密码直接预设在源代码中，输入由console.readline()完成。
 
+            if ("ut91" != code)
+            {
+                Console.WriteLine("验证码错误");
+            }
+            else
+            {
+                Console.WriteLine("验证码正确");
+                if ("yezi" != name)
+                {
+                    Console.WriteLine("用户名不存在");
+                }
+                else
+                {
+                    Console.WriteLine("用户名存在");
 
+                    if ("1212" != password)
+                    {
+                        Console.WriteLine("用户名或密码错误");
+                    }
+                    else
+                    {
+                        Console.WriteLine("密码正确");
+                        Console.WriteLine("恭喜！登陆成功！");
+                    }
+                }
+            }
+        }
 
+        static void array(string name) 
+        {
 
-            //if ("ut91" != Console.ReadLine())
-            //{
-            //    Console.WriteLine("验证码错误");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("验证码正确");
-            //    if ("yezi" != Console.ReadLine())
-            //    {
-            //        Console.WriteLine("用户名不存在");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("用户名存在");
-
-            //            if ("1212" != Console.ReadLine())
-            //            {
-            //                Console.WriteLine("用户名或密码错误");
-            //            }
-            //                else
-            //                {
-            //                    Console.WriteLine("密码正确"); 
-            //                    Console.WriteLine("恭喜！登陆成功！"); 
-            //                }
-            //    }
-            //}
-            #endregion
         }
     }
+
 }
