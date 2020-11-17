@@ -209,6 +209,40 @@ namespace ConsoleApp1
             //    Console.WriteLine();
             //}
 
+
+            //二分查找：在有序数组里面找到某个值
+            int[] find = { 1, 3, 9, 12, 17,23, 28, 33 ,35};
+            int left = 0, right = find.Length-1 , middle = (left + right) / 2;
+            int target = 3;
+            bool result = false;
+            while (left<=right )//left<rigth  就找不到1，35
+            {
+                middle = (left + right) / 2;
+                if (find[middle] >target )
+                {
+                    right = middle - 1;
+                }
+                else if (find[middle] < target)
+                {
+                    left = middle + 1;
+                }
+                else
+                {
+                    find[middle] = target;
+                    result = true ;//找到了就输出下标，
+                    break;
+                }
+            }
+            if (result )
+            {
+                Console.WriteLine(middle);
+            }
+            else
+            {
+                Console.WriteLine("找不到");
+            }
+
+
             #endregion
             #region 数组
             //        将源栈同学姓名 / 昵称分别：
@@ -241,20 +275,22 @@ namespace ConsoleApp1
             //    }
             //}
             //Console.WriteLine(a);
+
+            //array();
             #endregion
 
-            Judge ( "ut91", "yezi", "1212");
+            //Judge("ut91", "yezi", "1212");//调用
 
         }
-       
-       
+
+
         /// <summary>
         /// 登录界面
         /// </summary>
         /// <param name="code">验证码</param>
         /// <param name="name">用户名</param>
         /// <param name="password">密码</param>
-         static void Judge(string code, string  name,string password )
+        static void Judge(string code, string name, string password)
         {
             //将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
             //用户依次由控制台输入：验证码、用户名和密码：
@@ -264,36 +300,65 @@ namespace ConsoleApp1
             //    以上全部正确无误，输出：“恭喜！登录成功！”
             //ps：验证码 / 用户名 / 密码直接预设在源代码中，输入由console.readline()完成。
 
-            if ("ut91" != code)
-            {
-                Console.WriteLine("验证码错误");
-            }
-            else
-            {
-                Console.WriteLine("验证码正确");
-                if ("yezi" != name)
-                {
-                    Console.WriteLine("用户名不存在");
-                }
-                else
-                {
-                    Console.WriteLine("用户名存在");
+            //if ("ut91" != code)
+            //{
+            //    Console.WriteLine("验证码错误");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("验证码正确");
+            //    if ("yezi" != name)
+            //    {
+            //        Console.WriteLine("用户名不存在");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("用户名存在");
 
-                    if ("1212" != password)
-                    {
-                        Console.WriteLine("用户名或密码错误");
-                    }
-                    else
-                    {
-                        Console.WriteLine("密码正确");
-                        Console.WriteLine("恭喜！登陆成功！");
-                    }
-                }
-            }
+            //        if ("1212" != password)
+            //        {
+            //            Console.WriteLine("用户名或密码错误");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("密码正确");
+            //            Console.WriteLine("恭喜！登陆成功！");
+            //        }
+            //    }
+            //}
         }
 
-        static void array(string name) 
+        static void array(string[] message)
         {
+            //    将源栈同学姓名 / 昵称分别：
+            //    按进栈时间装入一维数组，
+            //    按座位装入二维数组，
+            //    并输出共有多少名同学。
+
+           string[] time   = new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "邹丽", "胡涛" };
+            string[,] seat = new string[3, 4];
+            seat[0, 0] = "龚廷义";
+            seat[0, 1] = "刘伟";
+            seat[1, 1] = "廖光银";
+            seat[1, 2] = "周丁浩";
+            seat[1, 3] = "李智博";
+            seat[2, 0] = "胡涛";
+            seat[2, 1] = "阿泰";
+            seat[2, 2] = "皱丽";
+
+            int a = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (seat[i, j] != null)
+                    {
+                        Console.WriteLine(seat[i, j]);
+                        a++;
+                    }
+                }
+            }
+            Console.WriteLine(a);
 
         }
     }
