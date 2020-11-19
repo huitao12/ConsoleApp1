@@ -107,7 +107,7 @@ namespace ConsoleApp1
             //Console.WriteLine(sum);
 
             //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
-            //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152};
+            //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 };
             //double max = grade[0], min = grade[0];
             //for (int i = 0; i < grade.Length; i++)
             //{
@@ -211,36 +211,36 @@ namespace ConsoleApp1
 
 
             //二分查找：在有序数组里面找到某个值
-            int[] find = { 1, 3, 9, 12, 17,23, 28, 33 ,35};
-            int left = 0, right = find.Length-1 , middle = (left + right) / 2;
-            int target = 3;
-            bool result = false;
-            while (left<=right )//left<rigth  就找不到1，35
-            {
-                middle = (left + right) / 2;
-                if (find[middle] >target )
-                {
-                    right = middle - 1;
-                }
-                else if (find[middle] < target)
-                {
-                    left = middle + 1;
-                }
-                else
-                {
-                    find[middle] = target;
-                    result = true ;//找到了就输出下标，
-                    break;
-                }
-            }
-            if (result )
-            {
-                Console.WriteLine(middle);
-            }
-            else
-            {
-                Console.WriteLine("找不到");
-            }
+            //int[] array = { 1, 3, 9, 12, 17,23, 28, 33 ,35};
+            //int left = 0, right = array.Length-1 , middle = (left + right) / 2;
+            //int target = 3;
+            //bool result = false;
+            //while (left<=right )//left<rigth  就找不到边缘
+            //{
+            //    middle = (left + right) / 2;
+            //    if (array[middle] >target )
+            //    {
+            //        right = middle - 1;
+            //    }
+            //    else if (array[middle] < target)
+            //    {
+            //        left = middle + 1;
+            //    }
+            //    else
+            //    {
+            //        array[middle] = target;
+            //        result = true ;//找到了就输出下标，
+            //        break;
+            //    }
+            //}
+            //if (result )
+            //{
+            //    Console.WriteLine(middle);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("找不到");
+            //}
 
 
             #endregion
@@ -279,10 +279,13 @@ namespace ConsoleApp1
             //array();
             #endregion
 
-            //Judge("ut91", "yezi", "1212");//调用
-
+            Judge("ut91", "yezi", "1212");//调用
+            student(new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "邹丽", "胡涛" });
+            circulation(5, 9);
+            calculate(100);
+            //seek(new double[] { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 });
+            find(100);
         }
-
 
         /// <summary>
         /// 登录界面
@@ -328,39 +331,123 @@ namespace ConsoleApp1
             //}
         }
 
-        static void array(string[] message)
+        /// <summary>
+        /// 一维数组/用for循环输出
+        /// </summary>
+        /// <param name="name">同学姓名</param>
+        static void student(string[] name)
         {
             //    将源栈同学姓名 / 昵称分别：
-            //    按进栈时间装入一维数组，
+            //    按进栈时间装入一维数组，/ //用for循环输出存储在一维
             //    按座位装入二维数组，
             //    并输出共有多少名同学。
 
-           string[] time   = new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "邹丽", "胡涛" };
-            string[,] seat = new string[3, 4];
-            seat[0, 0] = "龚廷义";
-            seat[0, 1] = "刘伟";
-            seat[1, 1] = "廖光银";
-            seat[1, 2] = "周丁浩";
-            seat[1, 3] = "李智博";
-            seat[2, 0] = "胡涛";
-            seat[2, 1] = "阿泰";
-            seat[2, 2] = "皱丽";
+            //string[] time = name;
+            //string[] schoolmate = name;
+            //for (int i = 0; i < schoolmate.Length; i++)
+            //{
+            //    Console.WriteLine(schoolmate[i]);
+            //}
+        }
 
-            int a = 0;
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    if (seat[i, j] != null)
-                    {
-                        Console.WriteLine(seat[i, j]);
-                        a++;
-                    }
-                }
-            }
-            Console.WriteLine(a);
+        /// <summary>
+        /// 用for跟while循环输出
+        /// </summary>
+        /// <param name="length">5</param>
+        /// <param name="odd">9</param>
+        static void circulation(int length, int odd)
+        {
+            //for (int i = 1; i <= length; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //int j = 1;
+            //while (j <= 5)
+            //{
+            //    Console.WriteLine(j);
+            //    j += 1;
+            //}
+
+            //int k = 1;
+            //while (k <= odd)
+            //{
+            //    Console.WriteLine(k);
+            //    k += 2;
+            //}
+
+            //for (int l = 1; l <= odd; l += 2)//i++
+            //{
+            //    Console.WriteLine(l);
+            //    //i += 1;
+            //}
+
 
         }
-    }
 
+        /// <summary>
+        /// 一百以内奇数的和
+        /// </summary>
+        /// <param name="number">最大值</param>
+        static void calculate(int number)
+            {
+            //让电脑计算并输出：99 + 97 + 95 + 93 + ...+1的值
+
+            int sum = 0;
+            for (int i = 1; i < number; i += 2)//i++
+            {
+                sum += i;//sum+=i++;
+            }
+            Console.WriteLine(sum);
+
+        }
+
+        static void rank(double  array)
+        {
+            //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
+            double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 };
+            double max = grade[0], min = grade[0];
+            for (int i = 0; i < grade.Length; i++)
+            {
+                if (grade[i] > max)
+                {
+                    max = grade[i];
+                }//else do nothing
+                if (grade[i] < min)
+                {
+                    min = grade[i];
+                }//else do nothing
+            }
+            Console.WriteLine(max);
+            Console.WriteLine(min);
+        }
+
+        /// <summary>
+        ///一百以内的质数
+        /// </summary>
+        /// <param name="number">最大值</param>
+        static void find(int number)
+        {
+            ////找到100以内的所有质数（只能被1和它自己整除的数）
+
+            for (int i = 2; i < number; i++)
+            {
+                bool isprime = true;//isprime是质数还是不是质数
+                for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
+                {
+                    if (i % j == 0) //说明不是质数
+                    {
+                        isprime = false;//不是质数
+                        break;
+                    }
+                }
+                if (isprime)//是质数
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+        }
+
+    }
 }
