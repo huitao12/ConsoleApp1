@@ -18,93 +18,10 @@ namespace ConsoleApp1
             #region 循环
 
 
-            // 分别用for循环和while循环输出：1,2,3,4,5 和 1,3,5,7,9
-
-            //用数组
-            //int[] age = { 1, 2, 3, 4, 5 };
-            //for (int i = 0; i < age.Length; i++)
-            //{
-            //Console.WriteLine(age[i]);
-            //}
 
 
-            //不用数组
-            //for (int i = 1; i <= 5; i++)
-            //{
-            //    Console.WriteLine(i);
-            //}
-
-            //int i = 1;
-            //while (i <= 5)
-            //{
-            //    Console.WriteLine(i);
-            //    i+=1; 
-            //}
-
-            //用数组输出
-            //int[] age = { 1, 3, 5, 7, 9 };
-            //int i = 0;//累加器
-            //while (i<age.Length)
-            //{
-            //    Console.WriteLine(age[i]);
-            //    i++;
-            //}
 
 
-            //不用数组
-            //int i = 1;
-            //while (i <= 9)
-            //{
-            //    Console.WriteLine(i);
-            //    i += 2;
-            //}
-
-            //for (int i = 1; i <= 9; i += 2)//i++
-            //{
-            //    Console.WriteLine(i);
-            //    //i += 1;
-            //}
-
-            //用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
-
-            //string[] name = { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "皱丽", "胡涛" };
-            //for (int i = 0; i < name.Length; i++)
-            //{
-            //    Console.WriteLine(name[i]);
-            //}
-
-
-            //string[,] seat = new string[3 ,4];//多态
-            //seat[0, 0] = "龚廷义";
-            //seat[0, 1] = "刘伟";
-            //seat[1, 1] = "廖光银";
-            //seat[1, 2] = "周丁浩";
-            //seat[1, 3] = "李智博";
-            //seat[2, 0] = "胡涛";
-            //seat[2, 1] = "阿泰";
-            //seat[2, 2] = "皱丽";
-            //int b = 0;
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 4; j++)
-            //    {
-            //        if (seat[i, j] != null)
-            //        {
-            //            b++;
-            //            Console.WriteLine(seat[i, j]);
-            //        }
-            //    }
-            //}
-            //Console.WriteLine(b);
-
-            //让电脑计算并输出：99 + 97 + 95 + 93 + ...+1的值
-
-            //int sum = 0;
-            //for (int i = 1; i < 100; i+=2)//i++
-            //{
-            //    sum += i;//sum+=i++;
-            //}
-            //Console.WriteLine(sum);
 
             //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
             //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 };
@@ -124,52 +41,17 @@ namespace ConsoleApp1
             //Console.WriteLine(min);
 
 
-            ////找到100以内的所有质数（只能被1和它自己整除的数）
-
-            //for (int i = 2; i < 100; i++)
-            //{
-            //    bool isprime = true;//isprime是质数还是不是质数
-            //    for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
-            //    {
-            //        if (i % j == 0) //说明不是质数
-            //        {
-            //            isprime = false;//不是质数
-            //            break;
-            //        }
-            //    }
-            //    if (isprime)//是质数
-            //    {
-            //        Console.WriteLine(i);
-            //    }
-            //}
 
 
             //生成一个元素（值随机）从小到大排列的数组
 
 
             //int[] age = new int[10];
-            //Random r = new Random();
-            //for (int i = 0; i < age.Length; i++)
+            //Random random = new Random();
+            //age[0] = random.Next(7);
+            //for (int i = 1; i < 100; i++)
             //{
-            //    int temp = r.Next(10, 50);
-            //    age[i] = temp;//生产随机10数组
-            //}
-            ////冒泡排序
-            //for (int i = 0; i < age.Length; i++)
-            //{
-            //    for (int j = 0; j < age.Length - 1; j++)
-            //    {
-            //        if (age[j] > age[j + 1])
-            //        {
-            //            int temp = age[j];
-            //            age[j] = age[j + 1];
-            //            age[j + 1] = temp;
-            //        }
-            //    }
-            //}
-            //for (int i = 0; i < age.Length; i++)
-            //{
-            //    Console.Write(age[i] + ",");
+            //    age[i] = random.Next() + age[i - 1];
             //}
 
 
@@ -198,13 +80,11 @@ namespace ConsoleApp1
 
 
             //int[,] seat = new int[3, 4];
-
             //for (int i = 0; i < seat.GetLength(0); i++)
             //{
             //    for (int j = 0; j < seat.GetLength(1); j++)
             //    {
-            //        seat[i, j] = i + j;
-            //        Console.Write(seat[i, j] + " ");
+            //        Console.Write(i+ j + " ");
             //    }
             //    Console.WriteLine();
             //}
@@ -244,48 +124,23 @@ namespace ConsoleApp1
 
 
             #endregion
-            #region 数组
-            //        将源栈同学姓名 / 昵称分别：
-            //    按进栈时间装入一维数组，
-            //    按座位装入二维数组，
-            //并输出共有多少名同学。
 
-            //string[] time = new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "皱丽", "胡涛" };
 
-            //string[,] seat = new string[3, 4];
-            //seat[0, 0] = "龚廷义";
-            //seat[0, 1] = "刘伟";
-            //seat[1, 1] = "廖光银";
-            //seat[1, 2] = "周丁浩";
-            //seat[1, 3] = "李智博";
-            //seat[2, 0] = "胡涛";
-            //seat[2, 1] = "阿泰";
-            //seat[2, 2] = "皱丽";
-
-            //int a = 0;
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 4; j++)
-            //    {
-            //        if (seat[i, j] != null)
-            //        {
-            //            Console.WriteLine(seat[i, j]);
-            //            a++;
-            //        }
-            //    }
-            //}
-            //Console.WriteLine(a);
-
-            //array();
-            #endregion
-
-            Judge("ut91", "yezi", "1212");//调用
+            string result = Judge("ut91", "yezi", "1212");//调用
             student(new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "邹丽", "胡涛" });
             circulation(5, 9);
             calculate(100);
             //seek(new double[] { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 });
             find(100);
+            //计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+            double[] grade = { 64.23, 65.44, 83.54, 75.35, 95.18, 54.66 };
+            Console.WriteLine(Math.Round(GetAverage(grade), 2));
+            //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+            LogOn("ut91", "yezi", "121");
         }
+
+        //http://17bang.ren/Article/299
+        //将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
 
         /// <summary>
         /// 登录界面
@@ -293,7 +148,7 @@ namespace ConsoleApp1
         /// <param name="code">验证码</param>
         /// <param name="name">用户名</param>
         /// <param name="password">密码</param>
-        static void Judge(string code, string name, string password)
+        static string Judge(string code, string name, string password)
         {
             //将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
             //用户依次由控制台输入：验证码、用户名和密码：
@@ -303,39 +158,42 @@ namespace ConsoleApp1
             //    以上全部正确无误，输出：“恭喜！登录成功！”
             //ps：验证码 / 用户名 / 密码直接预设在源代码中，输入由console.readline()完成。
 
-            //if ("ut91" != code)
-            //{
-            //    Console.WriteLine("验证码错误");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("验证码正确");
-            //    if ("yezi" != name)
-            //    {
-            //        Console.WriteLine("用户名不存在");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("用户名存在");
+            if ("ut91" != code)
+            {
+                Console.WriteLine("验证码错误");
+            }
+            else
+            {
+                Console.WriteLine("验证码正确");
+                if ("yezi" != name)
+                {
+                    Console.WriteLine("用户名不存在");
+                }
+                else
+                {
+                    Console.WriteLine("用户名存在");
 
-            //        if ("1212" != password)
-            //        {
-            //            Console.WriteLine("用户名或密码错误");
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("密码正确");
-            //            Console.WriteLine("恭喜！登陆成功！");
-            //        }
-            //    }
-            //}
+                    if ("1212" != password)
+                    {
+                        Console.WriteLine("用户名或密码错误");
+                    }
+                    else
+                    {
+                        //    Console.WriteLine("密码正确");
+                        //    Console.WriteLine("恭喜！登陆成功！");
+                        return "恭喜！登陆成功！";
+                    }
+                }
+            }
+            return "用户名或密码错误";
+
         }
 
         /// <summary>
         /// 一维数组/用for循环输出
         /// </summary>
         /// <param name="name">同学姓名</param>
-        static void student(string[] name)
+        static string student(string[] name)
         {
             //    将源栈同学姓名 / 昵称分别：
             //    按进栈时间装入一维数组，/ //用for循环输出存储在一维
@@ -343,11 +201,13 @@ namespace ConsoleApp1
             //    并输出共有多少名同学。
 
             //string[] time = name;
-            //string[] schoolmate = name;
-            //for (int i = 0; i < schoolmate.Length; i++)
-            //{
-            //    Console.WriteLine(schoolmate[i]);
-            //}
+            string[] schoolmate = name;
+            for (int i = 0; i < schoolmate.Length; i++)
+            {
+                //Console.WriteLine(schoolmate[i]);
+                return schoolmate[i];
+            }
+            return "1";
         }
 
         /// <summary>
@@ -389,8 +249,8 @@ namespace ConsoleApp1
         /// 一百以内奇数的和
         /// </summary>
         /// <param name="number">最大值</param>
-        static void calculate(int number)
-            {
+        static int calculate(int number)
+        {
             //让电脑计算并输出：99 + 97 + 95 + 93 + ...+1的值
 
             int sum = 0;
@@ -398,35 +258,36 @@ namespace ConsoleApp1
             {
                 sum += i;//sum+=i++;
             }
-            Console.WriteLine(sum);
+            return sum;
+            //Console.WriteLine(sum);
 
         }
 
-        static void rank(double  array)
+        static void rank(double array)
         {
-            //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
-            double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 };
-            double max = grade[0], min = grade[0];
-            for (int i = 0; i < grade.Length; i++)
-            {
-                if (grade[i] > max)
-                {
-                    max = grade[i];
-                }//else do nothing
-                if (grade[i] < min)
-                {
-                    min = grade[i];
-                }//else do nothing
-            }
-            Console.WriteLine(max);
-            Console.WriteLine(min);
+            ////将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
+            //double[] grade = { 81.3, 74.2, 67.2, 65.7, 95.5, 85.5, 57.2, 85.3, 84.1, 100, 152 };
+            //double max = grade[0], min = grade[0];
+            //for (int i = 0; i < grade.Length; i++)
+            //{
+            //    if (grade[i] > max)
+            //    {
+            //        max = grade[i];
+            //    }//else do nothing
+            //    if (grade[i] < min)
+            //    {
+            //        min = grade[i];
+            //    }//else do nothing
+            //}
+            //Console.WriteLine(max);
+            //Console.WriteLine(min);
         }
 
         /// <summary>
         ///一百以内的质数
         /// </summary>
         /// <param name="number">最大值</param>
-        static void find(int number)
+        static int find(int number)
         {
             ////找到100以内的所有质数（只能被1和它自己整除的数）
 
@@ -443,11 +304,123 @@ namespace ConsoleApp1
                 }
                 if (isprime)//是质数
                 {
-                    Console.WriteLine(i);
+                    return i;
                 }
             }
+            return 1;
+        }
+        /// <summary>
+        /// 计算成绩平均值
+        /// </summary>
+        /// <param name="grade">同学的分数</param>
+        /// <returns></returns>
+        static double GetAverage(double[] grade)
+        {
+            //计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
 
+            double sum = 0, average;
+            for (int i = 0; i < grade.Length; i++)
+            {
+                sum = sum + grade[i];
+            }
+            average = sum / grade.Length;
+            return average;
         }
 
+        //完成“猜数字”游戏，方法名GuessMe()：
+        //随机生成一个大于0小于1000的整数
+        //用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
+        //没猜中可以继续猜，但最多不能超过10次
+        //如果5次之内猜中，输出：你真牛逼！
+        //如果8次之内猜中，输出：不错嘛！
+        //10次还没猜中，输出：(～￣(OO)￣)ブ
+        //static void GuessMe()
+        //{
+        //    Random r = new Random();
+        //    int temp = r.Next(0, 1000);
+
+
+        //    int week = 528, middle;
+        //    for (int i = 0; i < array.Length - 1; i++)
+        //    {
+        //        if (left < 528)
+        //        {
+        //            Console.WriteLine("太小了")次数—1;
+        //            j--;
+        //            break;
+        //        }
+        //        else if (right > 528)
+        //        {
+        //            Console.WriteLine("太大了");
+        //            j--;
+        //        }
+
+        //        if (middle == week)
+        //        {
+        //            Console.WriteLine();
+        //        }
+        //    }
+        //}
+
+
+        //http://17bang.ren/Article/303
+        //利用ref调用Swap()方法交换两个同学的床位号
+
+        /// <summary>
+        /// 交换床位
+        /// </summary>
+        /// <param name="bunk1">一号床</param>
+        /// <param name="bunk2">二号床</param>
+        static void swap(ref int bunk1, ref int bunk2)
+        {
+            int temp = bunk1;
+            bunk1 = bunk2;
+            bunk2 = temp;
+        }
+
+
+        //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+        //true/false，表示登陆是否成功
+        //string，表示登陆失败的原因
+        static bool LogOn(string code, string name, string password)
+        {
+
+
+
+
+            if ("ut91" != code)
+            {
+                Console.WriteLine("验证码错误");
+            }
+            else
+            {
+                Console.WriteLine("验证码正确");
+                if ("yezi" != name)
+                {
+                    Console.WriteLine("用户名不存在");
+                }
+                else
+                {
+                    Console.WriteLine("用户名存在");
+
+                    if ("1212" != password)
+                    {
+                        Console.WriteLine("用户名或密码错误");
+                    }
+                    else
+                    {
+                        //Console.WriteLine("密码正确");
+                        //Console.WriteLine("恭喜！登陆成功！");
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+
     }
+
 }
+
