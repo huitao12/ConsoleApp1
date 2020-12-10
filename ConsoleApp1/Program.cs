@@ -17,8 +17,26 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            User.Register();
-            User.Login();
+
+            User xx = new User
+            {
+                Name = "小哥",
+                InvitedBy = "小弟"
+            };
+            User.Register(xx);
+
+            User zx = new User();
+            zx.Password = "qw123";
+            User.Login(zx);
+
+            //User xx = new User();
+            //xx.Name = "小哥";
+            //xx.InvitedBy = "大哥";
+            //User.Register(xx);
+
+
+
+
 
             //    DateTime mimicNow = new DateTime(13);
             //    //Console.WriteLine(DateTime.Now);
@@ -412,13 +430,7 @@ namespace ConsoleApp1
 
 
 
-        //C#-面向对象：基础中的基础-类和对象
-        //https://zhuanlan.zhihu.com/p/92362781
-        //观察“一起帮”的：
-        //注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy），和方法：Register()、Login()
-        //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish(）
-        //帮帮币版块，定义一个类HelpMoney，表示一行帮帮币交易数据，包含你认为应该包含的字段和方法
-        //为这些类的字段和方法设置合适的访问修饰符
+
 
 
 
