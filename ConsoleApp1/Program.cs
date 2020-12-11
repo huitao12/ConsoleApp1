@@ -15,26 +15,68 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
+        {
+            user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
+            user.age++;
+            return user;
+        }
         static void Main(string[] args)
         {
+            //http://17bang.ren/Article/708
+            //C#-面向对象：引用类型和值类型 
 
-            User xx = new User
-            {
-                Name = "小哥",
-                InvitedBy = "小弟"
-            };
-            User.Register(xx);
+            //第一题
+            //用代码和调试过程演示：
 
-            User zx = new User();
-            zx.Password = "qw123";
-            User.Login(zx);
+            //值类型参数的值传递
+            int lw = 20;
+            int zl = lw;
+            zl = 22;
+            Console.WriteLine(lw);
 
-            //User xx = new User();
-            //xx.Name = "小哥";
-            //xx.InvitedBy = "大哥";
+            //值类型参数的引用传递
+            User lww = new User();
+            lww.grade = 12.1;
+
+            User zll = lww;
+            zll.grade = 21.2;
+            Console.WriteLine(lww.grade);
+
+            //引用类型参数的值传递
+            //引用类型参数的引用传递（不推荐使用）
+            //return代替引用类型的引用传递
+            User zlz = new User();
+            zlz.age = 163;
+           zlz= Stature(/*ref*/ zlz);//用return如果不zlz=就会输出原本的值
+            Console.WriteLine(zlz.age);
+
+
+            //第二题
+            //思考：为什么需要区分引用类型和值类型？
+
+
+
+
+            //C#-面向对象：基础中的基础-类和对象
+            //https://zhuanlan.zhihu.com/p/92362781
+            //观察“一起帮”的调用
+            //User xx = new User
+            //{
+            //    Name = "小哥",
+            //    InvitedBy = "小弟"
+            //};
             //User.Register(xx);
 
+            //User zx = new User();
+            //zx.Password = "qw123";
+            //User.Login(zx);
 
+            //跟上面调用一样
+            //User xx = new User();
+            //xx.Name = "小哥";
+            //xx.InvitedBy = "小弟";
+            //User.Register(xx);
 
 
 
@@ -45,6 +87,8 @@ namespace ConsoleApp1
             //Console.WriteLine(DateTime.Now);
             //Console.WriteLine(DateTime.Now.Day);//Year/Month
             //Console.WriteLine(DateTime.Now.ToString( "yyyy年MM月dd日 hh点mm分ss秒"));
+
+
 
             //string result = logon("ut91", "yezi", "1212");//调用
             //showStudent(new string[] { "阿泰", "龚廷义", "刘伟", "廖光银", "周丁浩", "李智博", "邹丽", "胡涛" });
@@ -69,9 +113,10 @@ namespace ConsoleApp1
             ///第一题
             //GetArray();
             ///第二题
-            BinarySeek(new int[] { 1, 3, 6, 9, 23, 28, 32, 42, 53, 66 });
-        }
+            //BinarySeek(new int[] { 1, 3, 6, 9, 23, 28, 32, 42, 53, 66 });
 
+        }
+        
         //http://17bang.ren/Article/299
         //将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
 
@@ -368,24 +413,24 @@ namespace ConsoleApp1
         ////相邻两个元素之间的最大差值gap（默认为5）
         ////元素个数length（默认为10个）
 
-        static int[] GetArray(int min = 1, int gap = 5, int length = 10)
-        {
-            int[] array = new int[length];
-            Random random = new Random();
-            //array[0] = random.Next(10, 100);
-            for (int i = min; i < array.Length; i++)
-            {
-                //array[i] += gap;
-                //array = GetArray(min);
+        //static int[] GetArray(int min = 1, int gap = 5, int length = 10)
+        //{
+        //    int[] array = new int[length];
+        //    Random random = new Random();
+        //    //array[0] = random.Next(10, 100);
+        //    for (int i = min; i < array.Length; i++)
+        //    {
+        //        //array[i] += gap;
+        //        //array = GetArray(min);
 
-                array[i] = random.Next(gap) + array[i - 1];
-                Console.WriteLine(array[i]);
-                //array[i] += gap;
+        //        array[i] = random.Next(gap) + array[i - 1];
+        //        Console.WriteLine(array[i]);
+        //        //array[i] += gap;
 
-            }
-            //Console.WriteLine(array);
-            return array;
-        }
+        //    }
+        //    //Console.WriteLine(array);
+        //    return array;
+        //}
 
         /// <summary>
         /// 二分查找 找到某个元素
@@ -397,34 +442,34 @@ namespace ConsoleApp1
         //实现二分查找，方法名BinarySeek(int[] numbers, int target)：
         //传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
         //如果找到，返回该元素所在的下标；否则，返回-1
-        static int BinarySeek(int[] numbers, int target = 28)
-        {
-            int left = 0, right = numbers.Length - 1, middle = (left + right) / 2;
-            bool result = false;
-            while (left <= right)//left<rigth  就找不到边缘
-            {
-                middle = (left + right) / 2;
-                if (numbers[middle] > target)
-                {
-                    right = middle - 1;
-                }
-                else if (numbers[middle] < target)
-                {
-                    left = middle + 1;
-                }
-                else
-                {
-                    numbers[middle] = target;
-                    result = true;//找到了，
-                    break;
-                }
-            }
-            if (result)
-            {
-                Console.WriteLine(middle);//就输出下标
-            }
-            return -1;//没找到返回
-        }
+        //static int BinarySeek(int[] numbers, int target = 28)
+        //{
+        //    int left = 0, right = numbers.Length - 1, middle = (left + right) / 2;
+        //    bool result = false;
+        //    while (left <= right)//left<rigth  就找不到边缘
+        //    {
+        //        middle = (left + right) / 2;
+        //        if (numbers[middle] > target)
+        //        {
+        //            right = middle - 1;
+        //        }
+        //        else if (numbers[middle] < target)
+        //        {
+        //            left = middle + 1;
+        //        }
+        //        else
+        //        {
+        //            numbers[middle] = target;
+        //            result = true;//找到了，
+        //            break;
+        //        }
+        //    }
+        //    if (result)
+        //    {
+        //        Console.WriteLine(middle);//就输出下标
+        //    }
+        //    return -1;//没找到返回
+        //}
 
 
 

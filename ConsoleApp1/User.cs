@@ -45,6 +45,11 @@ namespace ConsoleApp1
             //}
             return "登录成功";
         }
-
+        public double grade;
+        public double age;
+        //public static void Stature(User user) 
+        //{
+        //    user.age++;
+        //}
     }
 }
